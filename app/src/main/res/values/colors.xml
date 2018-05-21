@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 按钮颜色 白色系 -->
+    <color name="btn_color_white_normal">#FFFFFF</color>
+    <color name="btn_color_white_pressed">#e5e5e5</color>
+    <color name="btn_color_white_disable">#CCCCCC</color>
+
+    <color name="colorPrimary">#39a9ff</color>
+    <color name="colorPrimaryDark">#3998ff</color>
+
+    <!-- 透明背景颜色 -->
+    <color name="translucent">#00000000</color>
+    <color name="translucentSec">#80000000</color>
+    <!-- 窗口颜色-->
+    <color name="colorwindowBackground">#f2f5f7</color>
+    <color name="colorTextPrimary">#18202a</color>
+    <color name="colorTextBlue">#39b8ff</color>
+    <color name="colorTextPrimarySec">#18202a</color>
+    <color name="colorTextPrimaryLight">#707b89</color>
+    <color name="colorText777">#777777</color>
+    <!-- 更浅色字体-->
+    <color name="colorTextPrimaryMoreLight">#979797</color>
+    <color name="colorLine">#e9eaeb</color>
+    <color name="colorLineSec">#eaeaea</color>
+    <!-- 内容区域颜色 -->
+    <color name="colorItemBg">#FFF</color>
+    <color name="colorEnableMore">#18202a</color>
+    <color name="colorwhite">#ffffff</color>
+    <color name="colorblack">#000000</color>
+    <color name="colorEnable">#E5E4E4</color>
+
+    <color name="colorRed">#ff4b38</color>
+    <color name="colorOrange">#ff7c25</color>
+    <color name="colorBlue">#13de64</color>
+</resources>
