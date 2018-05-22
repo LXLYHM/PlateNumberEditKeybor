@@ -143,7 +143,7 @@ public class CarKeyboardUtil {
     }
 
     /*
-     * 指定切换软键盘 isnumber false表示要切换为英文软键盘 true表示要切换为数字软键盘
+     * 指定切换软键盘 isEnglish false表示要切换为英文软键盘 true表示要切换为无中文字母软键盘
      */
     public void changeKeyboardOne(boolean isEnglish) {
         if (isEnglish) {
@@ -155,7 +155,7 @@ public class CarKeyboardUtil {
     }
 
     /*
-     * 指定切换软键盘 isnumber false表示要切换为英文软键盘 true表示要切换为数字软键盘
+     * 指定切换软键盘 isEnglish false表示要切换为无中文字母软键盘 true表示要切换为包含港澳学中文字母软键盘
      */
     public void changeKeyboardTwo(boolean isEnglish) {
         if (isEnglish) {
