@@ -68,32 +68,25 @@ public class CarKeyboardUtil {
 
     private OnKeyboardActionListener listener = new OnKeyboardActionListener() {
         @Override
-        public void swipeUp() {
-        }
+        public void swipeUp() {}
 
         @Override
-        public void swipeRight() {
-        }
+        public void swipeRight() {}
 
         @Override
-        public void swipeLeft() {
-        }
+        public void swipeLeft() {}
 
         @Override
-        public void swipeDown() {
-        }
+        public void swipeDown() {}
 
         @Override
-        public void onText(CharSequence text) {
-        }
+        public void onText(CharSequence text) {}
 
         @Override
-        public void onRelease(int primaryCode) {
-        }
+        public void onRelease(int primaryCode) {}
 
         @Override
-        public void onPress(int primaryCode) {
-        }
+        public void onPress(int primaryCode) {}
 
         @Override
         public void onKey(int primaryCode, int[] keyCodes) {
@@ -242,19 +235,13 @@ public class CarKeyboardUtil {
         closeAnimation = AnimationUtils.loadAnimation(mActivity, R.anim.anim_leave_from_bottom);
         closeAnimation.setAnimationListener(new Animation.AnimationListener() {
             @Override
-            public void onAnimationStart(Animation arg0) {
-
-            }
+            public void onAnimationStart(Animation arg0) {}
 
             @Override
-            public void onAnimationRepeat(Animation arg0) {
-
-            }
+            public void onAnimationRepeat(Animation arg0) {}
 
             @Override
-            public void onAnimationEnd(Animation arg0) {
-
-            }
+            public void onAnimationEnd(Animation arg0) {}
         });
     }
 

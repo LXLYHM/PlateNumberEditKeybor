@@ -11,8 +11,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.dawnling.platenumber.utils.CarKeyboardUtil;
+
+import java.util.Random;
 
 /**
  * 车牌号输入框  键盘
@@ -71,6 +75,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
         btnSubmit.setOnClickListener(this);
+
+        testArray();
+    }
+
+    //获取随机数
+    private int[] array = new int[]{0, 2, 3, 4, 5, 6, 7, 8, 9};
+    private void testArray() {
+        TextView textView = findViewById(R.id.textView);
+        String str = "";
+        for (int i = 0; i < array.length; i++){
+            int index = new Random().nextInt(array.length);
+            if (str.contains(array[index] + "")){
+                i--;
+            }else{
+                if (i == 4){
+                    str = str + " ";
+                }else {
+                    str = str + array[index];
+                }
+            }
+        }
+        Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
+        textView.setText(str);
     }
 
     /**
