@@ -110,6 +110,7 @@ public class CarKeyboardUtil {
                     }
                 }
             } else {
+//                if (primaryCode == 27941) return;
                 editable.insert(start, Character.toString((char) primaryCode)); //输入内容
                 // 判断第一个字符是否是中文,是，则自动切换到数字软键盘
                 if (mEdit.getText().toString().matches(reg)) {
