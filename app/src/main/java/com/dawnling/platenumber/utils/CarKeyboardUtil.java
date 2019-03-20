@@ -7,12 +7,17 @@ import android.inputmethodservice.KeyboardView;
 import android.inputmethodservice.KeyboardView.OnKeyboardActionListener;
 import android.text.Editable;
 import android.text.InputType;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.dawnling.platenumber.R;
 
@@ -21,6 +26,7 @@ import java.lang.reflect.Method;
 
 public class CarKeyboardUtil {
 
+    private final View keyBoardLayout;
     private Context mContext;
     private Activity mActivity;
     private KeyboardView mKeyboardView;
@@ -46,8 +52,9 @@ public class CarKeyboardUtil {
      * 判定是否是中文的正则表达式 [\\u4e00-\\u9fa5]判断一个中文 [\\u4e00-\\u9fa5]+多个中文
      */
     private String reg = "[\\u4e00-\\u9fa5]";
+    private final TextView tvCansel;
 
-    public CarKeyboardUtil(Activity activity, EditText edit) {
+    public CarKeyboardUtil(Activity activity, ViewGroup rootView, EditText edit) {
         mActivity = activity;
         mContext = activity;
         mEdit = edit;
@@ -58,12 +65,58 @@ public class CarKeyboardUtil {
         without_chinese_keyboar = new Keyboard(mContext, R.xml.qwerty_whitout_chinese);//最后一位 不允许O 允许港 澳 学
         have_chinese_keyboar = new Keyboard(mContext, R.xml.qwerty_have_chinese);//最后一位 不允许O 允许港 澳 学
 
-        mKeyboardView = activity
+        LayoutInflater inflater = LayoutInflater.from(mContext);
+        keyBoardLayout = inflater.inflate(R.layout.layout_keybord, null);
+        tvCansel = keyBoardLayout.findViewById(R.id.tvCansel);
+
+        keyBoardLayout.setBackgroundColor(mActivity.getResources().getColor(R.color.colorwhite));
+//        keyBoardLayout.setVisibility(View.GONE);
+        initLayoutHeight((LinearLayout) keyBoardLayout);
+        this.layoutView = keyBoardLayout;
+
+        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.MATCH_PARENT,RelativeLayout.LayoutParams.WRAP_CONTENT);
+        lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);//与父容器的左侧对齐
+        keyBoardLayout.setLayoutParams(lp);//设置布局参数
+        rootView.addView(keyBoardLayout);
+
+        mKeyboardView = keyBoardLayout
                 .findViewById(R.id.keyboard_view);
         mKeyboardView.setKeyboard(province_keyboard);
         mKeyboardView.setEnabled(true);
         mKeyboardView.setPreviewEnabled(false);
         mKeyboardView.setOnKeyboardActionListener(listener);
+    }
+
+
+    private View layoutView;
+    class finishListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            hideKeyboard();
+        }
+    }
+
+    public void initLayoutHeight(LinearLayout layoutView) {
+        LinearLayout.LayoutParams keyboard_layoutlLayoutParams = (LinearLayout.LayoutParams) layoutView
+                .getLayoutParams();
+        tvCansel.setOnClickListener(new finishListener());
+        if (keyboard_layoutlLayoutParams == null) {
+            int height = (int) (mActivity.getResources().getDisplayMetrics().heightPixels * SIZE.KEYBOARY_H);
+            layoutView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        } else {
+            keyboard_layoutlLayoutParams.height = (int) (mActivity.getResources().getDisplayMetrics().heightPixels * SIZE.KEYBOARY_H);
+        }
+
+        LinearLayout.LayoutParams TopLayoutParams = (LinearLayout.LayoutParams) tvCansel
+                .getLayoutParams();
+
+        if (TopLayoutParams == null) {
+            int height = (int) (mActivity.getResources().getDisplayMetrics().heightPixels * SIZE.KEYBOARY_T_H);
+            tvCansel.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, height));
+        } else {
+            TopLayoutParams.height = (int) (mActivity.getResources().getDisplayMetrics().heightPixels * SIZE.KEYBOARY_T_H);
+        }
     }
 
     private OnKeyboardActionListener listener = new OnKeyboardActionListener() {
@@ -171,6 +224,7 @@ public class CarKeyboardUtil {
      * 软键盘展示
      */
     public void showKeyboard() {
+        tvCansel.setVisibility(View.VISIBLE);
         mKeyboardView.setVisibility(View.VISIBLE);
         startAnimation();
     }
@@ -180,7 +234,6 @@ public class CarKeyboardUtil {
      */
     public void hideKeyboard() {
         stopAnimation();
-        mKeyboardView.setVisibility(View.GONE);
     }
 
     /**
@@ -234,27 +287,32 @@ public class CarKeyboardUtil {
     private void init() {
         openAnimation = AnimationUtils.loadAnimation(mActivity, R.anim.anim_entry_from_bottom);
         closeAnimation = AnimationUtils.loadAnimation(mActivity, R.anim.anim_leave_from_bottom);
-        closeAnimation.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation arg0) {}
-
-            @Override
-            public void onAnimationRepeat(Animation arg0) {}
-
-            @Override
-            public void onAnimationEnd(Animation arg0) {}
-        });
     }
 
     private void startAnimation() {
         if (openAnimation != null) {
+            tvCansel.startAnimation(openAnimation);
             mKeyboardView.startAnimation(openAnimation);
         }
     }
 
     public void stopAnimation() {
         if (closeAnimation != null) {
+            tvCansel.startAnimation(closeAnimation);
             mKeyboardView.startAnimation(closeAnimation);
+            closeAnimation.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation arg0) {}
+
+                @Override
+                public void onAnimationRepeat(Animation arg0) {}
+
+                @Override
+                public void onAnimationEnd(Animation arg0) {
+                    tvCansel.setVisibility(View.GONE);
+                    mKeyboardView.setVisibility(View.GONE);
+                }
+            });
         }
     }
 

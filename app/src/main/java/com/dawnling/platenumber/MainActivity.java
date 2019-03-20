@@ -38,8 +38,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        RelativeLayout rootView = findViewById(R.id.rootView);
         etPlateNumber = findViewById(R.id.etPlateNumber);
-        keyboardUtil = new CarKeyboardUtil(this, etPlateNumber);
+        keyboardUtil = new CarKeyboardUtil(this, rootView, etPlateNumber);
         imgIcon = findViewById(R.id.imgIcon);
         btnSubmit = findViewById(R.id.btnSubmit);
         rlPlateNumber = findViewById(R.id.rlPlateNumber);

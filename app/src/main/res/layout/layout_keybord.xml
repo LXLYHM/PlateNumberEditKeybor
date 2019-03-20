@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvCansel"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:paddingRight="20dp"
+        android:gravity="center_vertical|right"
+        android:text="关闭"
+        android:textSize="14sp"
+        android:textColor="@color/colorTextBlue"
+        android:background="@color/colorwhite"/>
+
+    <android.inputmethodservice.KeyboardView
+        android:id="@+id/keyboard_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#d1d5db"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:keyBackground="@drawable/selector_key_background"
+        android:keyPreviewHeight="43dp"
+        android:keyPreviewLayout="@layout/key_preview_layout"
+        android:keyTextColor="#333333"
+        android:keyTextSize="16sp"
+        android:paddingBottom="5dp"
+        android:shadowColor="#00000000"
+        android:shadowRadius="0.0"
+        android:paddingTop="5dp"/>
+
+</LinearLayout>

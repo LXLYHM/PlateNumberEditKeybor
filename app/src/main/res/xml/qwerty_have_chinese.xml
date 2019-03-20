@@ -2,7 +2,7 @@
 <Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
     android:horizontalGap="0.909%p"
     android:keyHeight="43dp"
-    android:keyWidth="9.0001%p"
+    android:keyWidth="9%p"
     android:verticalGap="5dp">
     <Row android:rowEdgeFlags="">
         <Key
@@ -63,20 +63,21 @@
         <!--<Key-->
             <!--android:codes="73"-->
             <!--android:keyLabel="I" />-->
-        <!--<Key-->
-            <!--android:codes="79"-->
-            <!--android:keyLabel="O" />-->
+        <Key
+            android:codes="79"
+            android:keyLabel="O"
+            android:keyBackground="@drawable/shape_777"/>
         <Key
             android:codes="80"
             android:keyLabel="P" />
         <Key
             android:codes="65"
             android:keyLabel="A" />
+    </Row>
+    <Row>
         <Key
             android:codes="83"
             android:keyLabel="S" />
-    </Row>
-    <Row>
         <Key
             android:codes="68"
             android:keyLabel="D" />
@@ -104,11 +105,11 @@
         <Key
             android:codes="90"
             android:keyLabel="Z" />
+    </Row>
+    <Row >
         <Key
             android:codes="67"
             android:keyLabel="C" />
-    </Row>
-    <Row >
         <Key
             android:codes="86"
             android:keyLabel="V" />
@@ -132,9 +133,9 @@
             android:keyLabel="学" />
         <Key
             android:codes="-3"
-            android:horizontalGap="2%p"
+            android:horizontalGap="1%p"
             android:keyEdgeFlags="right"
             android:keyIcon="@drawable/sym_keyboard_delete"
-            android:keyWidth="18.9092%p" />
+            android:keyWidth="18.9%p" />
     </Row>
 </Keyboard>
