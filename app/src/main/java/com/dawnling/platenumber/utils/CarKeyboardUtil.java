@@ -54,9 +54,9 @@ public class CarKeyboardUtil {
         init();
 
         province_keyboard = new Keyboard(mContext, R.xml.provice);//省份简称
-        english_keyboar = new Keyboard(mContext, R.xml.english);//第二位  允许O的  纯英文
-        without_chinese_keyboar = new Keyboard(mContext, R.xml.qwerty_whitout_chinese);//最后一位 不允许O 允许港 澳 学
-        have_chinese_keyboar = new Keyboard(mContext, R.xml.qwerty_have_chinese);//最后一位 不允许O 允许港 澳 学
+        english_keyboar = new Keyboard(mContext, R.xml.english);//第二位  纯英文 允许o 不允许数字
+        without_chinese_keyboar = new Keyboard(mContext, R.xml.qwerty_whitout_chinese);//第三位 数字+英文不允许o 不允许港 澳 学
+        have_chinese_keyboar = new Keyboard(mContext, R.xml.qwerty_have_chinese);//最后一位 数字+英文+港澳学  不允许o
 
         mKeyboardView = activity
                 .findViewById(R.id.keyboard_view);
