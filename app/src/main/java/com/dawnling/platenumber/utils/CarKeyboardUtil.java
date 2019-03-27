@@ -256,8 +256,6 @@ public class CarKeyboardUtil {
      * 软键盘展示
      */
     public void showKeyboard() {
-        tvCansel.setVisibility(View.VISIBLE);
-        mKeyboardView.setVisibility(View.VISIBLE);
         startAnimation();
     }
 
@@ -318,16 +316,16 @@ public class CarKeyboardUtil {
     }
 
     private void startAnimation() {
+        tvCansel.setVisibility(View.VISIBLE);
+        mKeyboardView.setVisibility(View.VISIBLE);
         if (openAnimation != null) {
-            tvCansel.startAnimation(openAnimation);
-            mKeyboardView.startAnimation(openAnimation);
+            this.layoutView.startAnimation(openAnimation);
         }
     }
 
     public void stopAnimation() {
         if (closeAnimation != null) {
-            tvCansel.startAnimation(closeAnimation);
-            mKeyboardView.startAnimation(closeAnimation);
+            this.layoutView.startAnimation(closeAnimation);
             closeAnimation.setAnimationListener(new Animation.AnimationListener() {
                 @Override
                 public void onAnimationStart(Animation arg0) {}
