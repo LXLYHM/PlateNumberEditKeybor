@@ -76,8 +76,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
         btnSubmit.setOnClickListener(this);
-
-        testArray();
     }
 
     //获取随机数

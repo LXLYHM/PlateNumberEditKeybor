@@ -7,36 +7,46 @@
     <Row android:rowEdgeFlags="">
         <Key
             android:codes="49"
-            android:keyLabel="1" />
+            android:keyLabel="1"
+            android:iconPreview="@drawable/key_bg"/>
         <Key
             android:codes="50"
-            android:keyLabel="2" />
+            android:keyLabel="2"
+            android:iconPreview="@drawable/key_bg"/>
         <Key
             android:codes="51"
-            android:keyLabel="3" />
+            android:keyLabel="3"
+            android:iconPreview="@drawable/key_bg"/>
         <Key
             android:codes="52"
-            android:keyLabel="4" />
+            android:keyLabel="4"
+            android:iconPreview="@drawable/key_bg"/>
         <Key
             android:codes="53"
-            android:keyLabel="5" />
+            android:keyLabel="5"
+            android:iconPreview="@drawable/key_bg"/>
         <Key
             android:codes="54"
-            android:keyLabel="6" />
+            android:keyLabel="6"
+            android:iconPreview="@drawable/key_bg"/>
         <Key
             android:codes="55"
-            android:keyLabel="7" />
+            android:keyLabel="7"
+            android:iconPreview="@drawable/key_bg"/>
         <Key
             android:codes="56"
-            android:keyLabel="8" />
+            android:keyLabel="8"
+            android:iconPreview="@drawable/key_bg"/>
         <Key
             android:codes="57"
-            android:keyLabel="9" />
+            android:keyLabel="9"
+            android:iconPreview="@drawable/key_bg"/>
         <Key
             android:codes="48"
             android:horizontalGap="1%p"
             android:keyEdgeFlags="right"
-            android:keyLabel="0" />
+            android:keyLabel="0"
+            android:iconPreview="@drawable/key_bg"/>
     </Row>
     <Row>
         <Key
@@ -66,7 +76,7 @@
         <Key
             android:codes="79"
             android:keyLabel="O"
-            android:keyBackground="@drawable/shape_777"/>
+            android:iconPreview="@drawable/key_bg"/>
         <Key
             android:codes="80"
             android:keyLabel="P" />
@@ -124,13 +134,16 @@
             android:keyLabel="M" />
         <Key
             android:codes="28207"
-            android:keyLabel="港" />
+            android:keyLabel="港"
+            android:iconPreview="@drawable/key_bg"/>
         <Key
             android:codes="28595"
-            android:keyLabel="澳" />
+            android:keyLabel="澳"
+            android:iconPreview="@drawable/key_bg"/>
         <Key
             android:codes="23398"
-            android:keyLabel="学" />
+            android:keyLabel="学"
+            android:iconPreview="@drawable/key_bg"/>
         <Key
             android:codes="-3"
             android:horizontalGap="1%p"

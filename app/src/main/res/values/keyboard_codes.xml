@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="hide_keyboard">-2525</integer>
+
+    <integer name="action_o">79</integer>//o
+    <integer name="action_0">48</integer>//0
+    <integer name="action_1">49</integer>//1
+    <integer name="action_2">50</integer>//2
+    <integer name="action_3">51</integer>//3
+    <integer name="action_4">52</integer>//4
+    <integer name="action_5">53</integer>//5
+    <integer name="action_6">54</integer>//6
+    <integer name="action_7">55</integer>//7
+    <integer name="action_8">56</integer>//8
+    <integer name="action_9">57</integer>//9
+</resources>

@@ -15,7 +15,9 @@
         android:textColor="@color/colorTextBlue"
         android:background="@color/colorwhite"/>
 
-    <android.inputmethodservice.KeyboardView
+    <!--自带键盘：-->
+    <!--<android.inputmethodservice.KeyboardView-->
+    <com.dawnling.platenumber.utils.BaseKeyboardView
         android:id="@+id/keyboard_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
