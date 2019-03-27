@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -135,6 +136,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         return super.onTouchEvent(event);
     }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if (keyboardUtil.isShow()) {
+                keyboardUtil.hideKeyboard();
+            } else {
+                finish();
+            }
+        }
+        return false;
+    }
+
 
     @Override
     public void onClick(View v) {
